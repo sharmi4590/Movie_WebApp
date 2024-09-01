@@ -3,6 +3,7 @@ import cookieParser from "cookie-parser";
 import path from "path";
 import cors from "cors"; // Import the CORS package
 
+
 import authRoutes from "./routes/auth.route.js";
 
 import { ENV_VARS } from "./config/envVars.js";
