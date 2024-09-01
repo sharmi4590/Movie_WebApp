@@ -12,7 +12,7 @@ const Signup = () => {
   const handleSignup = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/api/v1/auth/signup', { username, email, password });
+      const response = await axios.post('https://movie-webapp-whib.onrender.com/api/v1/auth/signup', { username, email, password });
       console.log('Signup successful:', response.data);
       window.alert('Signup successful! Please log in.');
       navigate('/login');
