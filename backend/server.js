@@ -21,7 +21,7 @@ const __dirname = path.resolve();
 //   credentials: true,
 // };
 const corsOptions = {
-  origin: 'https://movie-web-app-flame.vercel.app.com',
+  origin: 'https://movie-webapp-frontend-f8cf.onrender.com',
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true,
   allowedHeaders: 'Origin, X-Requested-With, Content-Type, Accept, Authorization',
