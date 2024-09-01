@@ -14,11 +14,17 @@ const app = express();
 const PORT = ENV_VARS.PORT;
 const __dirname = path.resolve();
 
-// Use CORS middleware
+// // Use CORS middleware
+// const corsOptions = {
+//   origin: ENV_VARS.NODE_ENV === 'production' ? 'https://movie-web-app-flame.vercel.app' : 'http://localhost:3000',
+//   methods: ['GET', 'POST', 'PUT', 'DELETE'],
+//   credentials: true,
+// };
 const corsOptions = {
-  origin: ENV_VARS.NODE_ENV === 'production' ? 'https://movie-web-app-flame.vercel.app/' : 'http://localhost:3000',
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  origin: 'https://movie-web-app-flame.vercel.app.com',
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true,
+  allowedHeaders: 'Origin, X-Requested-With, Content-Type, Accept, Authorization',
 };
 app.use(cors(corsOptions));
 
