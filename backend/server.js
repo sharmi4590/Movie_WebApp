@@ -15,7 +15,7 @@ const __dirname = path.resolve();
 
 // Use CORS middleware
 const corsOptions = {
-  origin: ENV_VARS.NODE_ENV === 'production' ? 'https://movie-web-app-navy.vercel.app' : 'http://localhost:3000',
+  origin: ENV_VARS.NODE_ENV === 'production' ? 'https://movie-web-app-flame.vercel.app/' : 'http://localhost:3000',
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true,
 };
