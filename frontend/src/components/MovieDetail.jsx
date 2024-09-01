@@ -3,11 +3,12 @@ import axios from 'axios';
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import { FaHeart, FaPlay } from 'react-icons/fa';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import moment from 'moment';
 
 function MovieDetail() {
   const { movieId } = useParams();
+  const navigate = useNavigate(); // Add useNavigate hook
   const [movie, setMovie] = useState(null);
   const [cast, setCast] = useState([]);
   const [posters, setPosters] = useState([]);
@@ -217,7 +218,11 @@ function MovieDetail() {
           <h2 className="text-2xl font-bold mb-4">Recommendations</h2>
           <div className="flex overflow-x-scroll scrollbar-hide space-x-4">
             {recommendations.map(rec => (
-              <div key={rec.id} className="flex-shrink-0 w-32">
+              <div 
+                key={rec.id} 
+                className="flex-shrink-0 w-32 cursor-pointer" 
+                onClick={() => navigate(`/movie/${rec.id}`)}
+              >
                 <img
                   src={`https://image.tmdb.org/t/p/w500${rec.poster_path}`}
                   alt={rec.title}
