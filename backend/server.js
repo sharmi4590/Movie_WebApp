@@ -14,11 +14,12 @@ const PORT = ENV_VARS.PORT;
 const __dirname = path.resolve();
 
 // Use CORS middleware
-app.use(cors({
-  origin: 'https://movie-web-app-navy.vercel.app/', // Replace with your frontend URL
+const corsOptions = {
+  origin: ENV_VARS.NODE_ENV === 'production' ? 'https://movie-web-app-navy.vercel.app' : 'http://localhost:3000',
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true,
-}));
+};
+app.use(cors(corsOptions));
 
 app.use(express.json()); // will allow us to parse req.body
 app.use(cookieParser());
