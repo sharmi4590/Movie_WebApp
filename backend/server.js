@@ -15,7 +15,7 @@ const __dirname = path.resolve();
 
 // Use CORS middleware
 app.use(cors({
-  origin: 'http://localhost:3000', // Replace with your frontend URL
+  origin: 'https://movie-web-app-navy.vercel.app/', // Replace with your frontend URL
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true,
 }));
